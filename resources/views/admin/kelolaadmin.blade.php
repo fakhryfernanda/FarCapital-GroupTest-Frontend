@@ -10,26 +10,19 @@
       <tr>
         <th>Nama</th>
         <th>Email</th>
-        <th>Action</th>
-
       </tr>
     </thead>
     <tbody class="text-center">
-      {{-- @foreach ($aspirations as $aspiration) --}}
+      @foreach ($admins as $admin)
         <tr>
           <td>
-              {{-- {{ $aspiration['aspirator'] }} --}}
+              {{ $admin->name }}
           </td>
           <td>
-              {{-- {{ $aspiration['nik'] }} --}}
-          </td>
-          <td>
-            <button type="button" class="btn btn-success">
-                {{-- <a href="/admin/detail/{{ $aspiration['id'] }}">Details</a> --}}
-              </button>
+              {{ $admin->email }}
           </td>
         </tr>
-      {{-- @endforeach --}}
+      @endforeach
     </tbody>
   </table>
   
