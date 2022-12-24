@@ -13,6 +13,7 @@
         <th>NIK</th>
         <th>Cerita Aspirasi</th>
         <th>Foto Aspirasi</th>
+        <th>Status</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -30,6 +31,9 @@
           </td>
           <td>
               <img src="{{ 'http://127.0.0.1:8000/storage/' . $aspiration['photo'] }}" alt="photo" width="200">
+          </td>
+          <td>
+            {{ $aspiration['is_read'] ? 'Sudah dibaca' : 'Belum dibaca'; }}
           </td>
           <td>
               {{-- <button type="button" class="btn btn-success">
