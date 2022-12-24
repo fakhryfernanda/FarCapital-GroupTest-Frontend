@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 
 class AspirationController extends Controller
 {
-    public function dashboard()
+    public function dashboard(Request $request)
     {
-        if (request('dibaca')) {
+        if ($request->filtercontent == 'dibaca') {
             $aspirations = Http::get(
                 "http://127.0.0.1:8000/api/aspiration/status/dibaca"
             )->json("data");
-        } elseif (request('belum')) {
+        } elseif ($request->filtercontent == 'belum') {
             $aspirations = Http::get(
                 "http://127.0.0.1:8000/api/aspiration/status/belum"
             )->json("data");
-        } else{
+        } else {
             $aspirations = Http::get(
                 "http://127.0.0.1:8000/api/aspiration"
             )->json("data");

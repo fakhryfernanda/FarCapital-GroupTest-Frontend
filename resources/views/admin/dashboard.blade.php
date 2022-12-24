@@ -8,28 +8,28 @@
   <h2>Daftar Aspirasi Warga Konoha</h2>
   <form action="/admin/dashboard" class="w-fit mx-auto mb-10">
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="reset" id="reset">
-      <label class="form-check-label" for="reset">
+      <input class="form-check-input" type="radio" name="filtercontent" id="reset">
+      <label class="form-check-label" for="filtercontent">
         Reset filter
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="dibaca" id="dibaca">
-      <label class="form-check-label" for="dibaca">
+      <input class="form-check-input" type="radio" name="filtercontent" id="dibaca" value="dibaca">
+      <label class="form-check-label" for="filtercontent">
         Sudah dibaca
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="belum" id="belum">
-      <label class="form-check-label" for="belum">
+      <input class="form-check-input" type="radio" name="filtercontent" id="belum" value="belum">
+      <label class="form-check-label" for="filtercontent">
         Belum dibaca
       </label>
     </div>
-    <div class="input-group-append">
+    <div class="input-group-append mt-3">
       <button class="btn btn-outline-secondary" type="submit">Filter</button>
     </div>
   </form>
-  <table class="table table-striped">
+  <table class="table table-striped mt-3">
     <thead class="text-center">
       <tr>
         <th>Nama Lengkap</th>
