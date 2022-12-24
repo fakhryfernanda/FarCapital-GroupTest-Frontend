@@ -5,7 +5,7 @@
 @section('dashboard')
 
 <div class="container mt-3">
-  <h2>Daftar Aspirasi Warga Konoha</h2>          
+  <h2>Daftar Aspirasi Warga Konoha</h2>       
   <table class="table table-striped">
     <thead class="text-center">
       <tr>

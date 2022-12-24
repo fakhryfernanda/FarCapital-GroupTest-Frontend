@@ -25,6 +25,8 @@
 
         @yield('dashboard')
 
+        @yield('detail')
+
     </div>
         
 

@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::get('/', function () {
     return view('aspirasi');
 });
