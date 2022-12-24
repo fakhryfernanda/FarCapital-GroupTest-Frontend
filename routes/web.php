@@ -14,14 +14,14 @@ Route::get('/tambah', function () {
 })->name('add.aspiration');
 
 
-Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->name('aspiration.detail');
+
 Route::post('/aspirasi/detail/{id}', [AspirationController::class, 'update'])->name('aspiration.update');
 Route::get('/admin/dashboard', [AspirationController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/login', [AdminController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
 Route::post('/logout', [AdminController::class, 'logout']);
-Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middleware('auth');
+Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middleware('auth')->name('aspiration.detail');
 
 
 
