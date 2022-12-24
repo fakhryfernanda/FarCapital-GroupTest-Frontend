@@ -12,14 +12,14 @@ class AspirationController extends Controller
         $aspirations = Http::get(
             "http://127.0.0.1:8000/api/aspiration"
         )->json("data");
-        
-        // dd($aspirations);
+
         return view('admin/dashboard', [
             "aspirations" => $aspirations
         ]);
     }
 
-    public function detail($id) {
+    public function detail($id)
+    {
         $aspiration = Http::get(
             "http://127.0.0.1:8000/api/aspiration/detail/{$id}"
         )->json("data");
@@ -32,25 +32,40 @@ class AspirationController extends Controller
         ]);
     }
 
-    public function add() {
+    public function add()
+    {
         return view('user/add');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $payload = $request->all();
 
         $path = $request->file('photo')->getPathName();
         $fileName = $request->file('photo')->getClientOriginalName();
 
         $response = Http::asMultipart()->attach(
-            'photo', 
-            file_get_contents($path), 
+            'photo',
+            file_get_contents($path),
             $fileName
         )->post(
             'http://127.0.0.1:8000/api/aspiration/add',
             $payload
         )->json();
 
+
         return redirect('admin/dashboard');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $payload = $request->all();
+
+        Http::post(
+            'http://127.0.0.1:8000/api/aspiration/update/' . $id,
+            $payload
+        )->json();
+
+        return redirect()->route('aspiration.detail', $id);
     }
 }
