@@ -23,6 +23,7 @@ Route::post('/aspirasi/update/{id}', [AspirationController::class, 'update'])->n
 
 Route::get('/login', [AdminController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
+Route::post('/logout', [AdminController::class, 'logout']);
 Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middleware('auth');
 
 
