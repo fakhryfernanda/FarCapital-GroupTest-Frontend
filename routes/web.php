@@ -29,3 +29,7 @@ Route::get('/login', function () {
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
 });
+
+Route::get('admin/detail', function () {
+    return view('admin.detail');
+});
