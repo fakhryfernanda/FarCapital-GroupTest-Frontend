@@ -18,8 +18,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => 'Muhammad',
+            'email' => 'muhammad@gmail.com',
             'password' => bcrypt(1234), // password
             'remember_token' => Str::random(10),
         ];
