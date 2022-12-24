@@ -5,7 +5,18 @@
 @section('dashboard')
 
 <div class="container mt-3">
-  <h2>Daftar Aspirasi Warga Konoha</h2>       
+  <h2>Daftar Aspirasi Warga Konoha</h2>
+  <form action="/admin/dashboard" class="w-fit mx-auto mb-10">
+    <div class="input-group mb-3">
+      <div class="input-group-text">
+        <span>Hanya tampilkan yang belum dibaca</span>
+        <input type="checkbox" name="is_read" value="1">
+      </div>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit">Button</button>
+      </div>
+    </div>
+  </form>
   <table class="table table-striped">
     <thead class="text-center">
       <tr>

@@ -9,9 +9,17 @@ class AspirationController extends Controller
 {
     public function dashboard()
     {
-        $aspirations = Http::get(
-            "http://127.0.0.1:8000/api/aspiration"
-        )->json("data");
+        // $is_read = request('is_read'); 
+        if (request('is_read')) {
+            $aspirations = Http::get(
+                "http://127.0.0.1:8000/api/aspiration/status/dibaca"
+            )->json("data");
+        } else {
+            $aspirations = Http::get(
+                "http://127.0.0.1:8000/api/aspiration"
+            )->json("data");
+        }
+
 
         return view('admin/dashboard', [
             "aspirations" => $aspirations
