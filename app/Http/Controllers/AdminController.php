@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -48,8 +50,21 @@ class AdminController extends Controller
         return view('admin.addadmin');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        // 
+        $admin = User::query()->where('email', $request->email)->first();
+        if ($admin) {
+            return redirect()->back()->withErrors(['message' => 'Email Sudah Digunakan!']);
+        }
+
+        $payload = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(10),
+        ];
+
+        User::query()->create($payload);
+        return redirect()->back()->with(['message' => 'Admin Berhasil Ditambah!']);
     }
 }

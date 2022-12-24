@@ -27,9 +27,8 @@ Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middl
 
 Route::post('/tambah', [AspirationController::class, 'store']);
 
-Route::get('/admin/addadmin', function () {
-    return view('admin.addadmin');
-});
+Route::get('/admin/addadmin', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin/add', [AdminController::class, 'store'])->name('admin.add');
 
 Route::get('/admin/kelolaadmin', function () {
     return view('admin.kelolaadmin');
