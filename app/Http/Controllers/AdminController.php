@@ -67,4 +67,11 @@ class AdminController extends Controller
         User::query()->create($payload);
         return redirect()->back()->with(['message' => 'Admin Berhasil Ditambah!']);
     }
+
+    public function showall()
+    {
+        $admins = User::query()->get();
+
+        return view('admin.kelolaadmin', ['admins' => $admins]);
+    }
 }

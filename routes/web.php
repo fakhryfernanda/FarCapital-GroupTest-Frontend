@@ -30,9 +30,7 @@ Route::post('/tambah', [AspirationController::class, 'store']);
 Route::get('/admin/addadmin', [AdminController::class, 'create'])->name('admin.create');
 Route::post('/admin/add', [AdminController::class, 'store'])->name('admin.add');
 
-Route::get('/admin/kelolaadmin', function () {
-    return view('admin.kelolaadmin');
-});
+Route::get('/admin/kelolaadmin', [AdminController::class, 'showall'])->name('admin.all');
 
 
 // Route::get('admin/dashboard', function () {
