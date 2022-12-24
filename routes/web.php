@@ -5,6 +5,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AspirationController;
 
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::get('/', function () {
     return view('aspirasi');
 });
