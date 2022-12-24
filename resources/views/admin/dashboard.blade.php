@@ -32,9 +32,14 @@
               <img src="{{ 'http://127.0.0.1:8000/storage/' . $aspiration['photo'] }}" alt="photo" width="200">
           </td>
           <td>
-              <button type="button" class="btn btn-success">
+              {{-- <button type="button" class="btn btn-success">
                 <a href="/admin/detail/{{ $aspiration['id'] }}">Details</a>
-              </button>
+              </button> --}}
+              <form action="{{ route('aspiration.update', $aspiration['id']) }}" method="POST">
+                @csrf
+                <input type="hidden" name="is_read" id="is_read" value="1">
+                <button type="submit" class="btn btn-success">Detail</button>
+              </form>
           </td>
         </tr>
       @endforeach
