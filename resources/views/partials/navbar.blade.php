@@ -4,14 +4,21 @@
   
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <a class="navbar-brand text-white" href="{{ route('home') }}">Forum Aspirasi </a>
-    {{-- <div class="navbar-nav d-flex align-items-center"> --}}
-
-      <a class="nav-item nav-link active text-white" href="{{ route('home') }}">Home</a>
-      <a class="nav-item nav-link  text-white" href="{{ route('add.aspiration') }}">Isi Aspirasi</a>
-      <a class="nav-item nav-link  text-white" href="/admin/dashboard">Dashboard</a>
-      {{-- </div> --}}
-    </div>
-    <a class="nav-item nav-link  text-white" href="{{ route('login') }}"><button type="button" class="btn btn-primary">login</button></a>
+    <a class="nav-item nav-link active text-white" href="{{ route('home') }}">Home</a>
+    <a class="nav-item nav-link  text-white" href="{{ route('add.aspiration') }}">Isi Aspirasi</a>
+    <a class="nav-item nav-link  text-white" href="/admin/dashboard">Dashboard</a>
+    <a class="nav-item nav-link  text-white" href="/admin/dashboard">Kelola Admin</a>
+  </div>
+  @auth
+  <form action="/logout" method="post">
+    @csrf
+    <button type="submit" class="btn btn-primary">Logout</button>
+  </form>
+  @else
+  <a class="nav-item nav-link  text-white" href="{{ route('login') }}">
+    <button type="button" class="btn btn-primary">Login</button>
+  </a>
+  @endauth
 </nav>
 </div>
 
