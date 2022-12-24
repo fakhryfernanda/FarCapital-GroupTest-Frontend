@@ -5,19 +5,19 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AspirationController;
 
 
-Route::get('/index', function () {
-    return view('index');
-});
-
 Route::get('/', function () {
+    return view('index');
+})->name('home');
+
+Route::get('/tambah', function () {
     return view('aspirasi');
-});
+})->name('add.aspiration');
 
 Route::get('/admin/dashboard', [AspirationController::class, 'dashboard']);
 Route::get('/admin/detail/{id}', [AspirationController::class, 'detail']);
 
-Route::get('/login', [AdminController::class, 'login']);
-Route::post('/login', [AdminController::class, 'authenticate']);
+Route::get('/login', [AdminController::class, 'login'])->name('login');
+Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
 
 
 // Route::get('admin/dashboard', function () {
