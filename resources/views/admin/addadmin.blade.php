@@ -4,7 +4,9 @@
 
 @section('addadmin')
 
-<h3>Form Tambah Admin</h3>
+<div class="mt-3">
+  <h3>Form Tambah Admin</h3>
+</div>
 <form action="{{ route('admin.add') }}" method="post" enctype="multipart/form-data">
   <!-- 2 column grid layout with text inputs for the first and last names -->
   @csrf
