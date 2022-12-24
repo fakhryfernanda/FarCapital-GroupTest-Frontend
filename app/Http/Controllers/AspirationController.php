@@ -13,6 +13,7 @@ class AspirationController extends Controller
             "http://127.0.0.1:8000/api/aspiration"
         )->json("data");
         
+        // dd($aspirations);
         return view('admin/dashboard', [
             "aspirations" => $aspirations
         ]);
@@ -24,7 +25,7 @@ class AspirationController extends Controller
         )->json("data");
 
         $date = substr($aspiration['created_at'], 0, 10);
-        $aspiration['created_at'] = date('F j, Y', strtotime($date));
+        $aspiration['created_at'] = date('j F Y', strtotime($date));
 
         return view('admin/detail', [
             "aspiration" => $aspiration
@@ -38,11 +39,11 @@ class AspirationController extends Controller
     public function store(Request $request) {
         $payload = $request->all();
 
-        $path = $request->file('image')->getPathName();
-        $fileName = $request->file('image')->getClientOriginalName();
+        $path = $request->file('photo')->getPathName();
+        $fileName = $request->file('photo')->getClientOriginalName();
 
         $response = Http::asMultipart()->attach(
-            'image', 
+            'photo', 
             file_get_contents($path), 
             $fileName
         )->post(

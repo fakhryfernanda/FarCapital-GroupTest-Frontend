@@ -19,6 +19,8 @@ Route::get('/admin/detail/{id}', [AspirationController::class, 'detail']);
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
 
+Route::post('/tambah', [AspirationController::class, 'store']);
+
 
 // Route::get('admin/dashboard', function () {
 //     return view('admin.dashboard');
