@@ -5,10 +5,11 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <a class="navbar-brand text-white" href="{{ route('home') }}">Forum Aspirasi </a>
     <a class="nav-item nav-link active text-white" href="{{ route('home') }}">Home</a>
-    <a class="nav-item nav-link  text-white" href="{{ route('add.aspiration') }}">Isi Aspirasi</a>
     <a class="nav-item nav-link  text-white" href="/admin/dashboard">Dashboard</a>
     @auth
     <a class="nav-item nav-link  text-white" href="/admin/kelolaadmin">Kelola Admin</a>
+    @else
+    <a class="nav-item nav-link  text-white" href="{{ route('add.aspiration') }}">Isi Aspirasi</a>
     @endauth
   </div>
   @auth
