@@ -12,12 +12,14 @@
     <a class="nav-item nav-link  text-white" href="{{ route('add.aspiration') }}">Isi Aspirasi</a>
     @endauth
   </div>
+  {{-- memeriksa apakah si user sudah diautentikasi --}}
   @auth
   <form action="/logout" method="post">
     @csrf
     <button type="submit" class="btn btn-primary">Logout</button>
   </form>
-  @else
+  {{-- kondisi ketika si user belum ter autentikasi --}}
+  @else 
   <a class="nav-item nav-link  text-white" href="{{ route('login') }}">
     <button type="button" class="btn btn-primary">Login</button>
   </a>

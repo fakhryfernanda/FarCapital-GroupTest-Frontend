@@ -12,6 +12,7 @@
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-5">Login Admin</h5>
             
+        {{-- kondisi ketika admin salah menginput password --}}
             @if (session()->has('loginError'))
             <div class="bg-warning ">
                 <p class="text-dark text-center">{{ session('loginError') }}</p>

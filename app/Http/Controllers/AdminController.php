@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function login()
+    public function login() //login 
     {
         return view('login', [
             'title' => 'Login'
         ]);
     }
 
-    public function authenticate(Request $request)
+    public function authenticate(Request $request) //authentication login
     {
         $credentials = $request->validate([
             'email' => 'required|email:dns',
@@ -34,7 +34,7 @@ class AdminController extends Controller
         return back()->with('loginError', 'Email atau password salah');
     }
 
-    public function logout()
+    public function logout() //logout session
     {
         Auth::logout();
 
@@ -50,7 +50,7 @@ class AdminController extends Controller
         return view('admin.addadmin');
     }
 
-    public function store(Request $request)
+    public function store(Request $request) // function menambah admin
     {
         $admin = User::query()->where('email', $request->email)->first();
         if ($admin) {
@@ -68,7 +68,7 @@ class AdminController extends Controller
         return redirect(route('admin.all'))->with('success', 'Admin Berhasil Ditambah!');
     }
 
-    public function showall()
+    public function showall()  // function show all admin
     {
         $admins = User::query()->get();
 
