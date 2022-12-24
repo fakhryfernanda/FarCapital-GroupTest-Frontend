@@ -40,4 +40,14 @@ class AdminController extends Controller
 
         return redirect('/login');
     }
+
+    public function create()
+    {
+        return view('');
+    }
+
+    public function store()
+    {
+        // 
+    }
 }
