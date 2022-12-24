@@ -14,6 +14,7 @@ Route::get('/tambah', function () {
 })->name('add.aspiration');
 
 Route::get('/admin/dashboard', [AspirationController::class, 'dashboard']);
+Route::get('/admin/detail/{id}', [AspirationController::class, 'detail']);
 
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
@@ -23,6 +24,6 @@ Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.logi
 //     return view('admin.dashboard');
 // });
 
-Route::get('admin/detail', function () {
-    return view('admin.detail');
-});
+// Route::get('admin/detail', function () {
+//     return view('admin.detail');
+// });
