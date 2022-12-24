@@ -54,7 +54,7 @@ class AdminController extends Controller
     {
         $admin = User::query()->where('email', $request->email)->first();
         if ($admin) {
-            return redirect()->back()->withErrors(['message' => 'Email Sudah Digunakan!']);
+            return redirect(route('admin.all'))->withErrors(['message' => 'Email Sudah Digunakan!']);
         }
 
         $payload = [
@@ -65,7 +65,7 @@ class AdminController extends Controller
         ];
 
         User::query()->create($payload);
-        return redirect()->back()->with(['message' => 'Admin Berhasil Ditambah!']);
+        return redirect(route('admin.all'))->with('success', 'Admin Berhasil Ditambah!');
     }
 
     public function showall()
