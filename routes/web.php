@@ -5,24 +5,28 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AspirationController;
 
 
-Route::get('/index', function () {
-    return view('index');
-});
-
 Route::get('/', function () {
+    return view('index');
+})->name('home');
+
+Route::get('/tambah', function () {
     return view('aspirasi');
-});
+})->name('add.aspiration');
 
 Route::get('/admin/dashboard', [AspirationController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/login', [AdminController::class, 'login'])->name('login');
-Route::post('/login', [AdminController::class, 'authenticate']);
+Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
+Route::get('/admin/detail/{id}', [AspirationController::class, 'detail']);
+
+
+Route::post('/tambah', [AspirationController::class, 'store']);
 
 
 // Route::get('admin/dashboard', function () {
 //     return view('admin.dashboard');
 // });
 
-Route::get('admin/detail', function () {
-    return view('admin.detail');
-});
+// Route::get('admin/detail', function () {
+//     return view('admin.detail');
+// });
