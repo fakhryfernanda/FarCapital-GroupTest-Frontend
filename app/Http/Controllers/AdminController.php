@@ -20,17 +20,21 @@ class AdminController extends Controller
 
     public function authenticate(Request $request)
     {
+        // validasi data
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email:dns', // harus format email
             'password' => 'required'
         ]);
 
         if (Auth::attempt($credentials)) {
+            // membuat token login
             $request->session()->regenerate();
 
+            // redirect ke halaman dashboard
             return redirect()->intended('/admin/dashboard');
         }
 
+        // jika email atau password salah, berikan pesan error
         return back()->with('loginError', 'Email atau password salah');
     }
 
