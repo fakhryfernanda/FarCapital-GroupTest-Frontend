@@ -32,8 +32,8 @@
       {{-- @endforeach --}}
     </tbody>
   </table>
-  <button type="button" class="btn btn-primary">
-              Tambah  {{-- <a href="/admin/detail/{{ $aspiration['id'] }}">Details</a> --}}
-  </button>
+  
+    <a href="/admin/addadmin"><button type="button" class="btn btn-primary"> Tambah</button></a>
+ 
 </div>
 @endsection

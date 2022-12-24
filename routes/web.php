@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 Route::get('/tambah', function () {
     return view('aspirasi');
-})->name('add.aspiration');
+})->name('add.aspiration')->middleware('guest');
 
 
 Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->name('aspiration.detail');
