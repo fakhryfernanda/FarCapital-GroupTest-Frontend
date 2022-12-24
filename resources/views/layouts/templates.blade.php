@@ -23,6 +23,8 @@
 
         @yield('login')
 
+        @yield('dashboard')
+
     </div>
         
 
