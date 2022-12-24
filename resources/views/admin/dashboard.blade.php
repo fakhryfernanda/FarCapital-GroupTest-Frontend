@@ -32,9 +32,9 @@
               <img src="{{ 'http://127.0.0.1:8000/storage/' . $aspiration['photo'] }}" alt="photo" width="200">
           </td>
           <td>
-              <button type="button" class="btn btn-success">Details</button>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-success">
+                <a href="/admin/detail/{{ $aspiration['id'] }}">Details</a>
+              </button>
           </td>
         </tr>
       @endforeach
