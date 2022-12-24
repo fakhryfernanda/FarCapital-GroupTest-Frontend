@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('aspirasi');
 });
 
-Route::get('/login', [AdminController::class, 'login']);
+Route::get('/login', [AdminController::class, 'index']);
 Route::post('/login', [AdminController::class, 'authenticate']);
 
 
