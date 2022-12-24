@@ -17,21 +17,27 @@
       </tr>
     </thead>
     <tbody class="text-center">
-      <tr>
-        <td>
-            John</td>
-        <td>
-            Doe</td>
-        <td>
-            john@example.com</td>
-        <td>
-            Lorem ipsum dolor sit amet.</td>
-        <td>
-            <button type="button" class="btn btn-success">Details</button>
-            <button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
+      @foreach ($aspirations as $aspiration)
+        <tr>
+          <td>
+              {{ $aspiration['aspirator'] }}
+          </td>
+          <td>
+              {{ $aspiration['nik'] }}
+          </td>
+          <td>
+            {{ $aspiration['story'] }}
+          </td>
+          <td>
+              <img src="{{ 'http://127.0.0.1:8000/storage/' . $aspiration['photo'] }}" alt="photo" width="200">
+          </td>
+          <td>
+              <button type="button" class="btn btn-success">Details</button>
+              <button type="button" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
 </div>

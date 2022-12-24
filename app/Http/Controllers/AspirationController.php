@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 class AspirationController extends Controller
 {
-    public function index()
+    public function dashboard()
     {
         $aspirations = Http::get(
             "http://127.0.0.1:8000/api/aspiration"
         )->json("data");
-
+        
         return view('admin/dashboard', [
             "aspirations" => $aspirations
         ]);
