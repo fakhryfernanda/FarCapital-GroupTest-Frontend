@@ -13,7 +13,6 @@ class AspirationController extends Controller
             "http://127.0.0.1:8000/api/aspiration"
         )->json("data");
 
-        // dd($aspirations);
         return view('admin/dashboard', [
             "aspirations" => $aspirations
         ]);
