@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -39,5 +41,15 @@ class AdminController extends Controller
         request()->session()->regenerateToken();
 
         return redirect('/login');
+    }
+
+    public function create()
+    {
+        return view('admin.addadmin');
+    }
+
+    public function store()
+    {
+        // 
     }
 }

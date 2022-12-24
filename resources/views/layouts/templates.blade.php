@@ -27,6 +27,10 @@
 
         @yield('detail')
 
+        @yield('addadmin')
+
+        @yield('kelolaadmin')
+
     </div>
         
 

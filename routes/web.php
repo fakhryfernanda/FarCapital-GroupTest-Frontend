@@ -11,20 +11,29 @@ Route::get('/', function () {
 
 Route::get('/tambah', function () {
     return view('aspirasi');
-})->name('add.aspiration');
+})->name('add.aspiration')->middleware('guest');
 
 
-Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->name('aspiration.detail');
+
 Route::post('/aspirasi/detail/{id}', [AspirationController::class, 'update'])->name('aspiration.update');
 Route::get('/admin/dashboard', [AspirationController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/login', [AdminController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
 Route::post('/logout', [AdminController::class, 'logout']);
-Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middleware('auth');
+Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middleware('auth')->name('aspiration.detail');
+
 
 
 Route::post('/tambah', [AspirationController::class, 'store']);
+
+Route::get('/admin/addadmin', function () {
+    return view('admin.addadmin');
+});
+
+Route::get('/admin/kelolaadmin', function () {
+    return view('admin.kelolaadmin');
+});
 
 
 // Route::get('admin/dashboard', function () {

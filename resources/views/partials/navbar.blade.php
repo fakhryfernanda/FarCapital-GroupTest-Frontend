@@ -7,6 +7,7 @@
     <a class="nav-item nav-link active text-white" href="{{ route('home') }}">Home</a>
     <a class="nav-item nav-link  text-white" href="{{ route('add.aspiration') }}">Isi Aspirasi</a>
     <a class="nav-item nav-link  text-white" href="/admin/dashboard">Dashboard</a>
+    <a class="nav-item nav-link  text-white" href="/admin/kelolaadmin">Kelola Admin</a>
   </div>
   @auth
   <form action="/logout" method="post">
