@@ -13,9 +13,9 @@ Route::get('/', function () {
     return view('aspirasi');
 });
 
-Route::get('/admin/dashboard', [AspirationController::class, 'dashboard']);
+Route::get('/admin/dashboard', [AspirationController::class, 'dashboard'])->middleware('auth');
 
-Route::get('/login', [AdminController::class, 'login']);
+Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::post('/login', [AdminController::class, 'authenticate']);
 
 

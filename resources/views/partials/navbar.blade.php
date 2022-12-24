@@ -7,6 +7,7 @@
     {{-- <div class="navbar-nav d-flex align-items-center"> --}}
       <a class="nav-item nav-link active text-white" href="#">Home</a>
       <a class="nav-item nav-link  text-white" href="#">Isi Aspirasi</a>
+      <a class="nav-item nav-link  text-white" href="/admin/dashboard">Dashboard</a>
       {{-- </div> --}}
     </div>
     <a class="nav-item nav-link  text-white" href="#"><button type="button" class="btn btn-primary">login</button></a>
