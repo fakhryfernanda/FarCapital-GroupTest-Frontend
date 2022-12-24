@@ -23,6 +23,9 @@ class AspirationController extends Controller
             "http://127.0.0.1:8000/api/aspiration/detail/{$id}"
         )->json("data");
 
+        $date = substr($aspiration['created_at'], 0, 10);
+        $aspiration['created_at'] = date('F j, Y', strtotime($date));
+
         return view('admin/detail', [
             "aspiration" => $aspiration
         ]);
