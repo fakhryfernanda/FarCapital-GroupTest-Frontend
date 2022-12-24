@@ -29,7 +29,7 @@ class AdminController extends Controller
             return redirect()->intended('/admin/dashboard');
         }
 
-        return back()->with('loginError', 'Login failed!');
+        return back()->with('loginError', 'Email atau password salah');
     }
 
     public function logout()
