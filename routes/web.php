@@ -18,9 +18,6 @@ Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->name(
 Route::post('/aspirasi/detail/{id}', [AspirationController::class, 'update'])->name('aspiration.update');
 Route::get('/admin/dashboard', [AspirationController::class, 'dashboard'])->middleware('auth');
 
-Route::get('/sapirasi/detail/{id}', [AspirationController::class, 'detail'])->name('aspiration.detail');
-Route::post('/aspirasi/update/{id}', [AspirationController::class, 'update'])->name('aspiration.update');
-
 Route::get('/login', [AdminController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AdminController::class, 'authenticate'])->name('auth.login');
 Route::get('/admin/detail/{id}', [AspirationController::class, 'detail'])->middleware('auth');
